@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Sidebar.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title><%: Page.Title %> - Home Page</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="vendor/StyleSheet1.css" rel="stylesheet" />
+   </head>
+<body>
+    <form runat="server">
+       
+        <div class="d-flex" id="wrapper">
+            <div class="bg-light border-light" id ="sidebar-wrapper">
+                <div class="sidebar-heading">ProcesswareSystems</div>
+                <div class="list-group list-group-flush">
+                 <a href="Personal%20Information.aspx"class="list-group-item list-group-item-action bg-light">Personal Information</a>                  
+                    <a href="KYC.aspx" class="list-group-item list-group-item-action bg-light">KYC</a>
+                    <a href="Address.aspx" class="list-group-item list-group-item-action bg-light">Address</a>
+                      <a href="Nominee.aspx" class="list-group-item list-group-item-action bg-light">Nominee</a>
+                    <a href="Change%20of%20address.aspx" class="list-group-item list-group-item-action bg-light">Change of Address</a>
+                    <a href="Customer%20Other%20Information.aspx" class="list-group-item list-group-item-action bg-light">Customer Other Information</a>
+                   
+
+                </div>
+
+            </div>
+
+
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary border-bottom">
+                    <button type="button" id="menu-toggle" class="btn btn-primary">
+                        <i class="fa fa-bars"></i>
+                        <span class="sr-only">Toggle Menu</span>
+                    </button>
+                      <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+     <ul class="navbar-nav flex-grow-1">
+        <li class="nav-item"><a class="navbar-brand" href="Home.aspx">Home</a></li>
+         <li class="nav-item"><a class="navbar-brand" href="Banksoft.aspx">Banksoft</a></li>
+             <li class="nav-item"><a class="navbar-brand" href="Branch%20Details.aspx">Branch Details</a></li>
+                 <li class="nav-item"><a class="navbar-brand" href="Loans.aspx">Loans</a></li>
+                     <li class="nav-item"><a class="navbar-brand" href="MobileBanking.aspx">Mobile Banking</a></li>
+                      
+                          <li class="nav-item"><a class="navbar-brand" href="Process.aspx">Process</a></li>
+          <li class="nav-item"><a class="navbar-brand" href="About.aspx">About</a></li>
+                          <li class="nav-item"><a class="navbar-brand" href="Home.aspx">Exit</a></li>
+        
+         </ul>
+            </div>
+                   
+               </nav>
+               
+                
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/jquery/jquery.min.js"></script>
+
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+
+            });
+        </script>
+
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; Processware.com <%: DateTime.Now.Year %> -Banksoft Processware Systems</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
